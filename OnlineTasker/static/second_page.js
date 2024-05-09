@@ -78,19 +78,29 @@ if (school == '1' && semester == '1') {
        inner_div.appendChild(button_div);
        div.appendChild(inner_div);
      }}
-  if (subject == '3') {
+    if (subject == '3') {
     let button_div = document.createElement("div");
     button_div.className = 'buttons';
+    let count = 0;
+    let inner_div = document.createElement("div");
+    inner_div.className = 'week';
+    div.appendChild(inner_div);
     for (var i in tasks[help[subject]][String(number_task) + ' задание']) {
+         ++count;
          let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
          button.value = tasks[help[subject]][String(number_task) + ' задание'][i];
          button.textContent = tasks[help[subject]][String(number_task) + ' задание'][i];
          button_div.appendChild(button);
-    }
-    div.appendChild(button_div);
-  }
+         if (count % 10 == 0) {
+            inner_div.appendChild(button_div);
+            button_div = document.createElement("div");
+            inner_div = document.createElement("div");
+            div.appendChild(inner_div);
+            button_div.className = 'buttons';
+         }
+         }}
      /**let div = document.createElement("div");
 
      let p = document.createElement("p");
@@ -100,5 +110,3 @@ if (school == '1' && semester == '1') {
      div.appendChild(p);*/
   document.body.appendChild(div);
 }
-
-
