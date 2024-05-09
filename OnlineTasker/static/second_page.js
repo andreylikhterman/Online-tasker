@@ -15,6 +15,9 @@ if (school == '1' && semester == '1') {
   let p = document.createElement("p");
   p.innerHTML = help[subject];
   document.body.className = 'body';
+  let input = document.createElement('input');
+  input.type = 'hidden';
+  document.body.appendChild(input);
   document.body.appendChild(p);
  if (subject == '2') {
   for (var i in tasks[help[subject]][String(number_task) + ' задание']) {
@@ -30,7 +33,7 @@ if (school == '1' && semester == '1') {
        let button_div = document.createElement("div");
        button_div.className = 'buttons';
        for (var z in tasks[help[subject]][String(number_task) + ' задание'][i][j]){
-         let button = document.createElement('input');
+         let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
          button.value = j.substr(1,) + ' ';
@@ -59,7 +62,7 @@ if (school == '1' && semester == '1') {
     let button_div = document.createElement("div");
     button_div.className = 'buttons';
        for (var z in tasks[help[subject]][String(number_task) + ' задание'][i]){
-         let button = document.createElement('input');
+         let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
          if (tasks[help[subject]][String(number_task) + ' задание'][i][z].includes("(")) {
@@ -79,7 +82,7 @@ if (school == '1' && semester == '1') {
     let button_div = document.createElement("div");
     button_div.className = 'buttons';
     for (var i in tasks[help[subject]][String(number_task) + ' задание']) {
-         let button = document.createElement('input');
+         let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
          button.value = tasks[help[subject]][String(number_task) + ' задание'][i];
