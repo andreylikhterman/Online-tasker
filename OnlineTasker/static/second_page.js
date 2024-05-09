@@ -12,7 +12,7 @@ if (school == '1' && semester == '1') {
   div.action = "/tasks/image";
   div.method = "post";
   div.className = 'task';
-  let p = document.createElement("p");
+  let p = document.createElement("h1");
   p.innerHTML = help[subject];
   document.body.className = 'body';
   let input = document.createElement('input');
@@ -27,11 +27,11 @@ if (school == '1' && semester == '1') {
     p.innerHTML = i;
     inner_div.appendChild(p);
      for (var j in tasks[help[subject]][String(number_task) + ' задание'][i]){
-       p = document.createElement("h1");
+       p = document.createElement("h2");
        p.innerHTML = j;
-       inner_div.appendChild(p);
        let button_div = document.createElement("div");
        button_div.className = 'buttons';
+       button_div.appendChild(p);
        for (var z in tasks[help[subject]][String(number_task) + ' задание'][i][j]){
          let button = document.createElement('button');
          button.name = 'number';
