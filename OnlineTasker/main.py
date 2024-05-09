@@ -18,8 +18,9 @@ def form(request: Request, school: str = Form(...), semester: str = Form(...), s
     return templates.TemplateResponse('second_page.html', context={'request': request, 'school' : school, 'semester' : semester, 'subject' : subject, 'number_task' : number_task})
 
 @app.post('/tasks/image')
-def form(request: Request, school: str = Form(...), semester: str = Form(...), subject: str = Form(...), number_task: str = Form(...)):
-    return templates.TemplateResponse('second_page.html', context={'request': request, 'school' : school, 'semester' : semester, 'subject' : subject, 'number_task' : number_task})
+def form(request: Request, number: str = Form(...)):
+    return templates.TemplateResponse('third_page.html', context={'request': request, 'number' : number})
+
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host='127.0.0.1', port=8006, reload=True)
+    uvicorn.run("main:app", host='127.0.0.1', port=8010, reload=True)

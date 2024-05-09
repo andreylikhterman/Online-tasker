@@ -9,6 +9,8 @@ let subject = document.getElementById("subject").value;
 let number_task = document.getElementById("number_task").value;
 if (school == '1' && semester == '1') {
   let div = document.createElement("form");
+  div.action = "/tasks/image";
+  div.method = "post";
   div.className = 'task';
   let p = document.createElement("p");
   p.innerHTML = help[subject];
@@ -28,7 +30,9 @@ if (school == '1' && semester == '1') {
        let button_div = document.createElement("div");
        button_div.className = 'buttons';
        for (var z in tasks[help[subject]][String(number_task) + ' задание'][i][j]){
-         let button = document.createElement('button');
+         let button = document.createElement('input');
+         button.name = 'number';
+         button.type = 'submit';
          button.value = j.substr(1,) + ' ';
          if (tasks[help[subject]][String(number_task) + ' задание'][i][j][z].includes("(")) {
            button.value += tasks[help[subject]][String(number_task) + ' задание'][i][j]
@@ -55,7 +59,9 @@ if (school == '1' && semester == '1') {
     let button_div = document.createElement("div");
     button_div.className = 'buttons';
        for (var z in tasks[help[subject]][String(number_task) + ' задание'][i]){
-         let button = document.createElement('button');
+         let button = document.createElement('input');
+         button.name = 'number';
+         button.type = 'submit';
          if (tasks[help[subject]][String(number_task) + ' задание'][i][z].includes("(")) {
            button.value += tasks[help[subject]][String(number_task) + ' задание'][i][z].substr(0, tasks[help[subject]][String(number_task) + ' задание'][i][z].indexOf("("));
          } else if (tasks[help[subject]][String(number_task) + ' задание'][i][z].includes("*")){
@@ -73,7 +79,9 @@ if (school == '1' && semester == '1') {
     let button_div = document.createElement("div");
     button_div.className = 'buttons';
     for (var i in tasks[help[subject]][String(number_task) + ' задание']) {
-         let button = document.createElement('button');
+         let button = document.createElement('input');
+         button.name = 'number';
+         button.type = 'submit';
          button.value = tasks[help[subject]][String(number_task) + ' задание'][i];
          button.textContent = tasks[help[subject]][String(number_task) + ' задание'][i];
          button_div.appendChild(button);
