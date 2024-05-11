@@ -36,7 +36,7 @@ if (school == '1' && semester == '1') {
          let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
-         button.value = j.substr(1,) + ' ';
+         button.value = 'Matan ' + j.substr(1,) + ' ';
          if (tasks[help[subject]][String(number_task) + ' задание'][i][j][z].includes("(")) {
            button.value += tasks[help[subject]][String(number_task) + ' задание'][i][j]
                       [z].substr(0, tasks[help[subject]][String(number_task) + ' задание'][i][j][z].indexOf("("));
@@ -65,6 +65,7 @@ if (school == '1' && semester == '1') {
          let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
+         button.value = 'Angem ';
          if (tasks[help[subject]][String(number_task) + ' задание'][i][z].includes("(")) {
            button.value += tasks[help[subject]][String(number_task) + ' задание'][i][z].substr(0, tasks[help[subject]][String(number_task) + ' задание'][i][z].indexOf("("));
          } else if (tasks[help[subject]][String(number_task) + ' задание'][i][z].includes("*")){
@@ -90,7 +91,7 @@ if (school == '1' && semester == '1') {
          let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
-         button.value = tasks[help[subject]][String(number_task) + ' задание'][i];
+         button.value = 'Discr ' + tasks[help[subject]][String(number_task) + ' задание'][i];
          button.textContent = tasks[help[subject]][String(number_task) + ' задание'][i];
          button_div.appendChild(button);
          if (count % 10 == 0) {
