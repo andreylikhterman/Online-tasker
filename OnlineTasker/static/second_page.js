@@ -110,3 +110,5 @@ if (school == '1' && semester == '1') {
      div.appendChild(p);*/
   document.body.appendChild(div);
 }
+
+
