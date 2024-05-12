@@ -3,6 +3,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 import uvicorn
+from number_of_tasks import *
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static", html=True), name="static")
@@ -19,6 +20,14 @@ def form(request: Request, school: str = Form(...), semester: str = Form(...), s
 
 @app.post('/tasks/image')
 def form(request: Request, number: str = Form(...)):
+    array_words = number.split(' ')
+    img = ''
+    if (array_words[0] == 'Matan'):
+        img = ''
+    elif (array_words[0] == 'Angem'):
+        img = ''
+    elif (array_words[0] == 'Discr'):
+        img = ''
     return templates.TemplateResponse('third_page.html', context={'request': request, 'number' : number})
 
 
