@@ -23,11 +23,17 @@ def form(request: Request, number: str = Form(...)):
     array_words = number.split(' ')
     img = ''
     if (array_words[0] == 'Matan'):
-        img = ''
+        if (array_words[2][0] == 'T'):
+            img = f'Online-tasking-pages/calculus-tasking/out{dict_of_number_T_calculus[array_words[2]]}.png'
+        else:
+            img = f'Online-tasking-pages/calculus-tasks/out{dict_of_number_of_tasks_calculus[int(array_words[1])][array_words[2]]}.png'
     elif (array_words[0] == 'Angem'):
-        img = ''
+        if (array_words[2][0] == 'T'):
+            img = f'Online-tasking-pages/analytic-geometry-tasking/out{dict_of_number_T_geometry[array_words[1]]}.png'
+        else:
+            img = f'Online-tasking-pages/analytic-geometry-tasks/out{dict_of_number_of_tasks_geometry[array_words[1]]}.png'
     elif (array_words[0] == 'Discr'):
-        img = ''
+        img = f'Online-tasking-pages/Discrete-math-tasks/out{dict_of_number_of_tasks_discret[array_words[1]]}.png'
     return templates.TemplateResponse('third_page.html', context={'request': request, 'number' : number})
 
 
