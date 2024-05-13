@@ -1,3 +1,14 @@
+function resetLists() {
+           window.location.reload();
+        }
+window.addEventListener('pageshow', function(event) {
+    // Если страница была кэширована и восстановлена из кэша,
+    // то event.persisted будет true и мы должны сбросить списки
+    if (event.persisted) {
+        resetLists();
+    }
+});
+
 let structure_fst = [[1, 2, 3, 4], [1, 2, 3, 4, 5, 6]]
 let structure_scd = [[[], [], [], []], [[], [], [], [], [], [], [], []]]
 structure_scd[0][0] = ["Аналитическая геометрия", "Введение в математический анализ", "Дискретная математика"]
@@ -64,8 +75,8 @@ schools.onchange=function(){
   subject.disabled = true;
   number_task.disabled = true;
   semester.innerHTML = "<option value=\"0\">-- Выберите семестр --</option>";
-  subject.innerHTML= "<option value=\"0\">-- Выберете предмет --</option>";
-  number_task.innerHTML="<option value=\"0\">-- Выберете номер задания --</option>";
+  subject.innerHTML= "<option value=\"0\">-- Выберите предмет --</option>";
+  number_task.innerHTML="<option value=\"0\">-- Выберите номер задания --</option>";
   myschool = this.value - 1;
   if (myschool != -1) {
     semester.innerHTML+='<hr />'
@@ -80,8 +91,8 @@ schools.onchange=function(){
 semester.onchange=function(){
   subject.disabled=false;
   number_task.disabled = true;
-  subject.innerHTML= "<option value=\"0\">-- Выберете предмет --</option>";
-  number_task.innerHTML="<option value=\"0\">-- Выберете номер задания --</option>";
+  subject.innerHTML= "<option value=\"0\">-- Выберите предмет --</option>";
+  number_task.innerHTML="<option value=\"0\">-- Выберите номер задания --</option>";
   mysemester = this.value - 1;
   if (mysemester != -1) {
     subject.innerHTML+='<hr />'
@@ -95,7 +106,7 @@ semester.onchange=function(){
 
 subject.onchange=function(){
   number_task.disabled=false;
-  number_task.innerHTML="<option value=\"0\">-- Выберете номер задания --</option>";
+  number_task.innerHTML="<option value=\"0\">-- Выберите номер задания --</option>";
   mysubject = this.value - 1;
   if(mysubject != -1) {
     number_task.innerHTML+='<hr />'

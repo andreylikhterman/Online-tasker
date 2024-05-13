@@ -91,7 +91,7 @@ if (school == '1' && semester == '1') {
          let button = document.createElement('button');
          button.name = 'number';
          button.type = 'submit';
-         button.value = 'Discr ' + tasks[help[subject]][String(number_task) + ' задание'][i];
+         button.value = 'Discr ' + number_task + ' ' + tasks[help[subject]][String(number_task) + ' задание'][i];
          button.textContent = tasks[help[subject]][String(number_task) + ' задание'][i];
          button_div.appendChild(button);
          if (count % 10 == 0) {

@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link href="{{ url_for('static')}}" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/third-page.css">
     <title>Image</title>
 </head>
 <body>
-  <img src = {{image}}>
-<h1>{{source}}</h1>
+    <div id="popup_gallery" class="popup_gallery">
+        <img class="currentImage" src="{{ source }}out{{ index }}.png" alt="Картинка">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    <script>
+        let source = "{{ source }}"; // папка с картинками
+        let index = {{ index }}; // индекс изначальной картинки
+        let popupImg = document.querySelector('.currentImage');
+
+    function hasNextImage() {
+            let img = new Image();
+            img.src = source + 'out' + (index + 1) + '.png';
+            return img.complete;
+        }
+
+        document.querySelector('.prev').addEventListener('click', () => {
+        if (index > 0) {
+            index--;
+            popupImg.src = source + 'out' + index + '.png';
+            updateButtons();
+        }
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        if (hasNextImage()) {
+            index++;
+            popupImg.src = source + 'out' + index + '.png';
+            updateButtons();
+        }
+    });
+
+    function updateButtons() {
+        document.querySelector('.prev').style.display = index === 0 ? 'none' : '';
+        document.querySelector('.next').style.display = hasNextImage() ? '' : 'none';
+    }
+    </script>
 </body>
 </html>
