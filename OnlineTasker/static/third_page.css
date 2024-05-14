@@ -17,9 +17,9 @@ h1 {
 }
 
 .number {
-    left: 1040px;
-    bottom: 1600px;
-    position: relative;
+    position: fixed;
+    top: 10px; /* Отступ от верхнего края экрана */
+    right: 10px;
     display: flex;
 }
 
