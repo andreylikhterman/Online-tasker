@@ -12,9 +12,28 @@ h1 {
     text-align: center;
 }
 
-.popup_gallery {
+.container {
+  justify-content: center;
+}
+
+.number {
+    left: 1040px;
+    bottom: 1600px;
     position: relative;
+    display: flex;
+}
+
+h2 {
+    color: solid black;
+    top: 50px;
+    font-size:30px;
     text-align: center;
+}
+
+.popup_gallery {
+    text-align: center;
+    justify-content: center
+    align-items: center;
 }
 
 .currentImage {
