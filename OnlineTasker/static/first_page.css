@@ -9,10 +9,25 @@ body {
     height: 100vh;
 }
 
+.Authors {
+    float: bottom;
+    bottom: 5px;
+    height 10px;
+    position: absolute;
+    display: flex;
+}
+
 h1 {
     color: #333;
     text-align: center;
 }
+
+h2 {
+    color: grey;
+    text-align: center;
+    font-size: 15px;
+}
+
 .task {
   background-color: yellow;
 }
