@@ -46,6 +46,7 @@ if (school == '1' && semester == '1') {
          } else {
            button.value += tasks[help[subject]][String(number_task) + ' задание'][i][j][z];
          }
+         button.value += ' ' + tasks[help[subject]][String(number_task) + ' задание'][i][j][z].replace(/ /g, '');
          button.textContent = tasks[help[subject]][String(number_task) + ' задание'][i][j][z];
          button_div.appendChild(button);
        }
@@ -75,6 +76,7 @@ if (school == '1' && semester == '1') {
          }
          button.textContent = tasks[help[subject]][String(number_task) + ' задание'][i][z];
          button_div.appendChild(button);
+         button.value += ' ' + tasks[help[subject]][String(number_task) + ' задание'][i][z];
        }
        inner_div.appendChild(button_div);
        div.appendChild(inner_div);
