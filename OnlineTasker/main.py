@@ -44,8 +44,8 @@ def form(request: Request, number: str = Form(...)):
         img = f'../static/Online-tasking-pages/Discrete-math-tasks/out{dict_of_number_of_tasks_discret[array_words[1]][array_words[2]]}.png'
         source = f'../static/Online-tasking-pages/Discrete-math-tasks/'
         index = dict_of_number_of_tasks_discret[array_words[1]][array_words[2]]
-    return templates.TemplateResponse('third_page.html', context={'request': request, 'image': img, 'source':source, 'index':index})
+    return templates.TemplateResponse('third_page.html', context={'request': request, 'image': img, 'source': source, 'index': index, 'number' : number})
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host='127.0.0.1', port=8015, reload=True)
+    uvicorn.run("main:app", host='127.0.0.1', port=8016, reload=True)
