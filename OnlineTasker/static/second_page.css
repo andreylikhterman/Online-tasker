@@ -76,7 +76,7 @@ h2 {
 }
 
 /* Медиа-запросы для адаптивного дизайна */
-@media (max-width: 768px) {
+@media (max-width: 1104px) {
   .container {
     padding: 10px;
   }
