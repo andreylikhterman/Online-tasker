@@ -1,11 +1,8 @@
-function resetLists() {
-           window.location.reload();
-        }
 window.addEventListener('pageshow', function(event) {
     // Если страница была кэширована и восстановлена из кэша,
     // то event.persisted будет true и мы должны сбросить списки
     if (event.persisted) {
-        resetLists();
+        window.location.reload();
     }
 });
 
