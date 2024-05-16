@@ -37,6 +37,7 @@ h2 {
 .popup_gallery {
     overflow: auto;
     width: 100%;
+    max-height: 150%;
     margin-right: auto;
     margin-left: auto;
     position: fixed;
@@ -52,10 +53,11 @@ h2 {
 }
 
 .currentImage {
+    max-width: 100%;
     height: auto;
     width: auto;
     margin: auto;
-    display: block;
+    display: flex;
 }
 
 .prev,
