@@ -22,33 +22,40 @@ h1 {
 .number {
     position: fixed;
     top: 10px; /* Отступ от верхнего края экрана */
-    right: 10px;
+    right: 20px;
     display: flex;
     z-index:1000;
 }
 
 h2 {
-    color: solid black;
+    color: #a59f9f;
     top: 50px;
     font-size:30px;
     text-align: center;
 }
 
 .popup_gallery {
+    overflow: auto;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    position:fixed;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    top:0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .currentImage {
-    max-height:100%;
-    max-width: 100%;
+    height: auto;
+    width: auto;
+    margin: auto;
+    display: block;
 }
 
 .prev,
@@ -63,6 +70,10 @@ h2 {
     cursor: pointer;
     user-select: none;
     transition: background-color 0.3s ease;
+}
+
+.next {
+    margin-right:5px;
 }
 
 .prev:hover,
