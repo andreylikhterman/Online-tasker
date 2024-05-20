@@ -44,4 +44,28 @@ def form(request: Request, number: str = Form(...)):
         img = f'../static/Online-tasking-pages/Discrete-math-tasks/out{dict_of_number_of_tasks_discret[array_words[1]][array_words[2]]}.png'
         source = f'../static/Online-tasking-pages/Discrete-math-tasks/'
         index = dict_of_number_of_tasks_discret[array_words[1]][array_words[2]]
+    elif (array_words[0] == 'Linal'):
+        if (array_words[2][0] == 'Т'):
+            img = f'../static/Online-tasking-pages/linal_tasking/out{dict_of_number_T_algebra[int(array_words[1])][array_words[2]]}.png'
+            source = f'../static/Online-tasking-pages/linal_tasking/'
+            index = dict_of_number_T_algebra[int(array_words[1])][array_words[2]]
+        else:
+            img = f'../static/Online-tasking-pages/analytic-geometry-tasks/out{dict_of_number_of_tasks_geometry[array_words[2]]}.png'
+            source = f'../static/Online-tasking-pages/analytic-geometry-tasks/'
+            index = dict_of_number_of_tasks_geometry[array_words[2]]
+    elif (array_words[0] == 'Mathlogic'):
+        print(array_words)
+        img = f'../static/Online-tasking-pages/math_logic_tasking/out{dict_of_number_of_tasks_math_logic[array_words[1]][array_words[2]]}.png'
+        source = f'../static/Online-tasking-pages/math_logic_tasking/'
+        index = dict_of_number_of_tasks_math_logic[array_words[1]][array_words[2]]
+    elif (array_words[0] == 'Multimatan'):
+        if (array_words[3][0] == 'T'):
+            img = f'../static/Online-tasking-pages/calculus-tasking/out{dict_of_number_T_calculus[int(array_words[1])][array_words[3]]}.png'
+            source = f'../static/Online-tasking-pages/calculus-tasking/'
+            index = dict_of_number_T_calculus[int(array_words[1])][array_words[3]]
+        else:
+            print(array_words)
+            img = f'../static/Online-tasking-pages/calculus-tasks/out{dict_of_number_of_tasks_calculus[int(array_words[2])][array_words[3]]}.png'
+            source = f'../static/Online-tasking-pages/calculus-tasks/'
+            index = dict_of_number_of_tasks_calculus[int(array_words[2])][array_words[3]]
     return templates.TemplateResponse('third_page.html', context={'request': request, 'image': img, 'source': source, 'index': index, 'number' : array_words[-1]})
