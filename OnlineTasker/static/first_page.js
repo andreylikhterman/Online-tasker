@@ -1,10 +1,13 @@
-window.addEventListener('pageshow', function(event) {
-    // Если страница была кэширована и восстановлена из кэша,
-    // то event.persisted будет true и мы должны сбросить списки
-    if (event.persisted) {
-        window.location.reload();
-    }
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted ||
+                         (typeof window.performance != "undefined" &&
+                              window.performance.navigation.type === 2);
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
 });
+
 
 let structure_fst = [[1, 2, 3, 4], [1, 2, 3, 4, 5, 6]]
 let structure_scd = [[[], [], [], []], [[], [], [], [], [], [], [], []]]
